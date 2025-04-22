@@ -1,14 +1,20 @@
-const NavBar = ({logo, links}) => {
-    return (        
+import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget';
+
+const NavBar = ({ logo, links }) => {
+    return (
         <nav>
             <div>
-                <img src={logo} alt="Logo de la librería" />
+                <img src={logo} alt="Logo de la tienda" />
                 <ul>
-                    {links.map((link, index) => (
-                        <li key={index}><a href={link.href}>{link.text}</a></li>
-                    ))}
+                <Link to= '/' >Home</Link>
+                <Link to= '/catálogo' >Catálogo</Link>
+                <Link to= '/contacto' >Contacto</Link>
                 </ul>
             </div>
+            <CartWidget quantity={0} /> {0}
         </nav>
-);
-}
+    );
+};
+
+export default NavBar;
